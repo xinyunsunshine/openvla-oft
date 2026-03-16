@@ -58,7 +58,7 @@ from prismatic.vla.constants import (
     NUM_ACTIONS_CHUNK,
     PROPRIO_DIM,
 )
-from prismatic.vla.datasets import RLDSBatchTransform, RLDSDataset
+from prismatic.vla.datasets import MULTILEVEL_KEYS, MultiLevelBatchTransform, RLDSBatchTransform, RLDSDataset, VariationBatchTransform
 from prismatic.vla.datasets.rlds.utils.data_utils import save_dataset_statistics
 
 # Sane Defaults
@@ -109,6 +109,12 @@ class FinetuneConfig:
     merge_lora_during_training: bool = True          # If True, merges LoRA weights and saves result during training
                                                      #   Note: Merging can be very slow on some machines. If so, set to
                                                      #         False and merge final checkpoint offline!
+
+    # Instruction-level sampling
+    variation_sampling: bool = False                 # If True, uses MultiLevelBatchTransform (samples one level per step)
+    variation_levels: str = ""                       # Comma-separated instruction levels to sample from.
+                                                     #   Empty = all levels. Options: task, subgoal, low_level_motion,
+                                                     #   low_level_motion_with_numbers, spatial_command, object_affordance
 
     # Logging
     wandb_entity: str = "your-wandb-entity"          # Name of WandB entity
@@ -967,14 +973,26 @@ def finetune(cfg: FinetuneConfig) -> None:
     use_wrist_image = cfg.num_images_in_input > 1
 
     # Create training and optional validation datasets
-    batch_transform = RLDSBatchTransform(
-        action_tokenizer,
-        processor.tokenizer,
-        image_transform=processor.image_processor.apply_transform,
-        prompt_builder_fn=PurePromptBuilder,
-        use_wrist_image=use_wrist_image,
-        use_proprio=cfg.use_proprio,
-    )
+    if cfg.variation_sampling:
+        levels = tuple(cfg.variation_levels.split(",")) if cfg.variation_levels else tuple(MULTILEVEL_KEYS)
+        batch_transform = MultiLevelBatchTransform(
+            action_tokenizer,
+            processor.tokenizer,
+            image_transform=processor.image_processor.apply_transform,
+            prompt_builder_fn=PurePromptBuilder,
+            use_wrist_image=use_wrist_image,
+            use_proprio=cfg.use_proprio,
+            levels=levels,
+        )
+    else:
+        batch_transform = RLDSBatchTransform(
+            action_tokenizer,
+            processor.tokenizer,
+            image_transform=processor.image_processor.apply_transform,
+            prompt_builder_fn=PurePromptBuilder,
+            use_wrist_image=use_wrist_image,
+            use_proprio=cfg.use_proprio,
+        )
     train_dataset = RLDSDataset(
         cfg.data_root_dir,
         cfg.dataset_name,

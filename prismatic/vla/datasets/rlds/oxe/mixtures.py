@@ -213,6 +213,70 @@ OXE_NAMED_MIXTURES: Dict[str, List[Tuple[str, float]]] = {
         ("libero_10_no_noops", 1.0),
     ],
 
+    # === LIBERO Language-Action Datasets (Verbose) ===
+    "libero_spatial_no_noops_langact_verbose": [
+        ("libero_spatial_no_noops_langact_verbose", 1.0),
+    ],
+    "libero_object_no_noops_langact_verbose": [
+        ("libero_object_no_noops_langact_verbose", 1.0),
+    ],
+    "libero_goal_no_noops_langact_verbose": [
+        ("libero_goal_no_noops_langact_verbose", 1.0),
+    ],
+    "libero_10_no_noops_langact_verbose": [
+        ("libero_10_no_noops_langact_verbose", 1.0),
+    ],
+    "libero_4_task_suites_no_noops_langact_verbose": [
+        ("libero_spatial_no_noops_langact_verbose", 1.0),
+        ("libero_object_no_noops_langact_verbose", 1.0),
+        ("libero_goal_no_noops_langact_verbose", 1.0),
+        ("libero_10_no_noops_langact_verbose", 1.0),
+    ],
+
+    # === LIBERO Language-Action Datasets (No-Number) ===
+    "libero_spatial_no_noops_langact_nonum": [
+        ("libero_spatial_no_noops_langact_nonum", 1.0),
+    ],
+    "libero_object_no_noops_langact_nonum": [
+        ("libero_object_no_noops_langact_nonum", 1.0),
+    ],
+    "libero_goal_no_noops_langact_nonum": [
+        ("libero_goal_no_noops_langact_nonum", 1.0),
+    ],
+    "libero_10_no_noops_langact_nonum": [
+        ("libero_10_no_noops_langact_nonum", 1.0),
+    ],
+    "libero_4_task_suites_no_noops_langact_nonum": [
+        ("libero_spatial_no_noops_langact_nonum", 1.0),
+        ("libero_object_no_noops_langact_nonum", 1.0),
+        ("libero_goal_no_noops_langact_nonum", 1.0),
+        ("libero_10_no_noops_langact_nonum", 1.0),
+    ],
+
+    # === LIBERO Combined Language-Action Dataset (Noisy Verbose) ===
+    "libero_combined_langact_verbose_noisy": [
+        ("libero_combined_langact_verbose_noisy", 1.0),
+    ],
+    "libero_combined_langact_verbose_noisy_v2": [
+        ("libero_combined_langact_verbose_noisy_v2", 1.0),
+    ],
+    "libero_combined_langact_verbose_noisy_v2_1traj": [
+        ("libero_combined_langact_verbose_noisy_v2_1traj", 1.0),
+    ],
+    "libero_combined_langact_nonum_v2": [
+        ("libero_combined_langact_nonum_v2", 1.0),
+    ],
+    "libero_combined_langact_nonum_v2_1traj": [
+        ("libero_combined_langact_nonum_v2_1traj", 1.0),
+    ],
+    ### LIBERO subgoal datasets
+    "libero_subgoal": [("libero_subgoal", 1.0)],
+    "libero_subgoal_5traj": [("libero_subgoal_5traj", 1.0)],
+    "libero_subgoal_1traj": [("libero_subgoal_1traj", 1.0)],
+    "libero_subgoal_multilevel": [("libero_subgoal_multilevel", 1.0)],
+    "libero_subgoal_multilevel_5traj": [("libero_subgoal_multilevel_5traj", 1.0)],
+    "libero_subgoal_multilevel_1traj": [("libero_subgoal_multilevel_1traj", 1.0)],
+
     # === ALOHA Fine-Tuning Datasets ===
     "aloha1_fold_shorts_20_demos": [
         ("aloha1_fold_shorts_20_demos", 1.0),

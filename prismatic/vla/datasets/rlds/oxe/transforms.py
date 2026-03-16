@@ -925,6 +925,28 @@ OXE_STANDARDIZATION_TRANSFORMS = {
     "libero_goal_no_noops": libero_dataset_transform,
     "libero_10_no_noops": libero_dataset_transform,
     "libero_4_task_suites_no_noops": libero_dataset_transform,
+    ### LIBERO combined language-action datasets
+    "libero_combined_langact_verbose_noisy": libero_dataset_transform,
+    "libero_combined_langact_verbose_noisy_v2": libero_dataset_transform,
+    "libero_combined_langact_verbose_noisy_v2_1traj": libero_dataset_transform,
+    "libero_combined_langact_nonum_v2": libero_dataset_transform,
+    "libero_combined_langact_nonum_v2_1traj": libero_dataset_transform,
+    ### LIBERO subgoal datasets
+    "libero_subgoal": libero_dataset_transform,
+    "libero_subgoal_5traj": libero_dataset_transform,
+    "libero_subgoal_1traj": libero_dataset_transform,
+    "libero_subgoal_multilevel": libero_dataset_transform,
+    "libero_subgoal_multilevel_5traj": libero_dataset_transform,
+    "libero_subgoal_multilevel_1traj": libero_dataset_transform,
+    ### LIBERO language-action datasets
+    "libero_spatial_no_noops_langact_verbose": libero_dataset_transform,
+    "libero_spatial_no_noops_langact_nonum": libero_dataset_transform,
+    "libero_object_no_noops_langact_verbose": libero_dataset_transform,
+    "libero_object_no_noops_langact_nonum": libero_dataset_transform,
+    "libero_goal_no_noops_langact_verbose": libero_dataset_transform,
+    "libero_goal_no_noops_langact_nonum": libero_dataset_transform,
+    "libero_10_no_noops_langact_verbose": libero_dataset_transform,
+    "libero_10_no_noops_langact_nonum": libero_dataset_transform,
     ### ALOHA fine-tuning datasets
     "aloha1_fold_shorts_20_demos": aloha_dataset_transform,
     "aloha1_fold_shirt_30_demos": aloha_dataset_transform,

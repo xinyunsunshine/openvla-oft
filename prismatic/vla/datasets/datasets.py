@@ -5,6 +5,8 @@ Lightweight PyTorch Dataset Definition for wrapping RLDS TFDS Pipeline; just def
 format to OpenVLA, IterableDataset shim.
 """
 
+import json
+import random
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Tuple, Type
@@ -89,6 +91,83 @@ class RLDSBatchTransform:
             return_dict["proprio"] = proprio
 
         return return_dict
+
+
+@dataclass
+class VariationBatchTransform(RLDSBatchTransform):
+    """Like RLDSBatchTransform but randomly samples from subgoal variation phrasings.
+
+    Expects language_instruction to be a JSON-encoded list produced by
+    subgoal_dataset_builder.py:
+        '["canonical phrasing", "variation 1", "variation 2", ...]'
+
+    At each training step, one phrasing is chosen uniformly at random.
+    For the canonical (non-variation) model, use the base RLDSBatchTransform
+    (which picks the full JSON string as-is) or set variation_index=0.
+    """
+
+    variation_index: int = -1  # -1 = random; 0 = canonical; N = fixed index N
+
+    def __call__(self, rlds_batch: Dict[str, Any]) -> Dict[str, Any]:
+        raw = rlds_batch["task"]["language_instruction"].decode()
+        try:
+            phrasings = json.loads(raw)
+            if not isinstance(phrasings, list) or len(phrasings) == 0:
+                raise ValueError
+            if self.variation_index == -1:
+                lang = random.choice(phrasings)
+            else:
+                idx = min(self.variation_index, len(phrasings) - 1)
+                lang = phrasings[idx]
+        except (json.JSONDecodeError, ValueError):
+            # Not a JSON list — treat as plain string (backwards compat)
+            lang = raw
+
+        # Temporarily patch the batch so the parent __call__ uses our chosen lang
+        rlds_batch["task"]["language_instruction"] = lang.encode()
+        return super().__call__(rlds_batch)
+
+
+# All keys available in a multilevel language_instruction JSON dict
+MULTILEVEL_KEYS = [
+    "task",
+    "subgoal",
+    "low_level_motion",
+    "low_level_motion_with_numbers",
+    "spatial_command",
+    "object_affordance",
+]
+
+
+@dataclass
+class MultiLevelBatchTransform(RLDSBatchTransform):
+    """Randomly samples one instruction level per training step.
+
+    Expects language_instruction to be a JSON-encoded dict produced by
+    subgoal_dataset_builder.py (multilevel variant):
+        '{"task": "...", "subgoal": "...", "low_level_motion": "...", ...}'
+
+    At each step, one key is sampled uniformly from `levels`.
+    Falls back to plain string if not a valid JSON dict (backwards compat).
+    """
+
+    levels: tuple = tuple(MULTILEVEL_KEYS)  # keys to sample from
+
+    def __call__(self, rlds_batch: Dict[str, Any]) -> Dict[str, Any]:
+        raw = rlds_batch["task"]["language_instruction"].decode()
+        try:
+            d = json.loads(raw)
+            if not isinstance(d, dict):
+                raise ValueError
+            available = [k for k in self.levels if k in d and d[k]]
+            if not available:
+                raise ValueError
+            lang = d[random.choice(available)]
+        except (json.JSONDecodeError, ValueError):
+            lang = raw
+
+        rlds_batch["task"]["language_instruction"] = lang.encode()
+        return super().__call__(rlds_batch)
 
 
 class RLDSDataset(IterableDataset):

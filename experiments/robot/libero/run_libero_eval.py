@@ -114,6 +114,9 @@ class GenerateConfig:
     num_trials_per_task: int = 50                    # Number of rollouts per task
     initial_states_path: str = "DEFAULT"             # "DEFAULT", or path to initial states JSON file
     env_img_res: int = 256                           # Resolution for environment images (not policy input resolution)
+    task_id_start: int = 0                             # First task ID to evaluate (inclusive)
+    task_id_end: int = -1                              # Last task ID to evaluate (exclusive); -1 means all tasks
+    custom_task_description: str = ""                   # Override task description with custom prompt (e.g. "put the wine bottle on the plate")
 
     #################################################################################################################
     # Utils
@@ -178,8 +181,11 @@ def initialize_model(cfg: GenerateConfig):
 
 def check_unnorm_key(cfg: GenerateConfig, model) -> None:
     """Check that the model contains the action un-normalization key."""
-    # Initialize unnorm_key
-    unnorm_key = cfg.task_suite_name
+    # Use explicitly provided unnorm_key if it exists in norm_stats
+    if cfg.unnorm_key and cfg.unnorm_key in model.norm_stats:
+        return
+
+    unnorm_key = cfg.unnorm_key if cfg.unnorm_key else cfg.task_suite_name
 
     # In some cases, the key must be manually modified (e.g. after training on a modified version of the dataset
     # with the suffix "_no_noops" in the dataset name)
@@ -188,7 +194,6 @@ def check_unnorm_key(cfg: GenerateConfig, model) -> None:
 
     assert unnorm_key in model.norm_stats, f"Action un-norm key {unnorm_key} not found in VLA `norm_stats`!"
 
-    # Set the unnorm_key in cfg
     cfg.unnorm_key = unnorm_key
 
 
@@ -383,6 +388,11 @@ def run_task(
     # Initialize environment and get task description
     env, task_description = get_libero_env(task, cfg.model_family, resolution=cfg.env_img_res)
 
+    # Override task description if custom prompt is provided
+    if cfg.custom_task_description:
+        log_message(f"Overriding task description: '{task_description}' -> '{cfg.custom_task_description}'", log_file)
+        task_description = cfg.custom_task_description
+
     # Start episodes
     task_episodes, task_successes = 0, 0
     for episode_idx in tqdm.tqdm(range(cfg.num_trials_per_task)):
@@ -481,11 +491,16 @@ def eval_libero(cfg: GenerateConfig) -> float:
     task_suite = benchmark_dict[cfg.task_suite_name]()
     num_tasks = task_suite.n_tasks
 
+    # Determine task range
+    task_start = cfg.task_id_start
+    task_end = num_tasks if cfg.task_id_end == -1 else min(cfg.task_id_end, num_tasks)
+
     log_message(f"Task suite: {cfg.task_suite_name}", log_file)
+    log_message(f"Task range: [{task_start}, {task_end})", log_file)
 
     # Start evaluation
     total_episodes, total_successes = 0, 0
-    for task_id in tqdm.tqdm(range(num_tasks)):
+    for task_id in tqdm.tqdm(range(task_start, task_end)):
         total_episodes, total_successes = run_task(
             cfg,
             task_suite,
