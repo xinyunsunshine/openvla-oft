@@ -1,0 +1,3363 @@
+{
+  "checkpoint": "/proj/inf-scaling/zwhong/idan/vla-rl/openvla-oft/runs/openvla-7b+libero_combined_langact_verbose_noisy_v2+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--langact_verbose--libero_all1traj_morenoise_1steps--2000_chkpt",
+  "task_suite": "libero_10",
+  "task_id": 0,
+  "task_description": "put both the alphabet soup and the tomato sauce in the basket",
+  "seed": 7,
+  "states": {
+    "initial": {
+      "prompt_accuracy": {
+        "correct": 13,
+        "total": 29
+      },
+      "condition_accuracy": {
+        "correct": 28,
+        "total": 55
+      },
+      "per_dim_accuracy": {
+        "dx": {
+          "correct": 5,
+          "total": 10,
+          "accuracy": 0.5
+        },
+        "dy": {
+          "correct": 7,
+          "total": 9,
+          "accuracy": 0.778
+        },
+        "dz": {
+          "correct": 5,
+          "total": 10,
+          "accuracy": 0.5
+        },
+        "droll": {
+          "correct": 4,
+          "total": 10,
+          "accuracy": 0.4
+        },
+        "dpitch": {
+          "correct": 4,
+          "total": 7,
+          "accuracy": 0.571
+        },
+        "dyaw": {
+          "correct": 2,
+          "total": 7,
+          "accuracy": 0.286
+        },
+        "grip": {
+          "correct": 1,
+          "total": 2,
+          "accuracy": 0.5
+        }
+      },
+      "prompts": {
+        "move_forward_5cm": {
+          "prompt": "move forward 5.0 cm, open gripper",
+          "expected": "dx > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 2.3238,
+            "dy": 0.4316,
+            "dz": -1.615,
+            "droll": 0.3477,
+            "dpitch": 0.4423,
+            "dyaw": -0.4038,
+            "grip": 5.1797
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 2.3238,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_back_5cm": {
+          "prompt": "move back 5.0 cm, open gripper",
+          "expected": "dx < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.3599,
+            "dy": -2.3153,
+            "dz": -2.1588,
+            "droll": 0.4098,
+            "dpitch": 0.378,
+            "dyaw": -0.5135,
+            "grip": 4.7695
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3599,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_left_5cm": {
+          "prompt": "move left 5.0 cm, open gripper",
+          "expected": "dy > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.3056,
+            "dy": 0.8294,
+            "dz": -3.5175,
+            "droll": 0.1451,
+            "dpitch": 0.1833,
+            "dyaw": 0.0327,
+            "grip": 3.2305
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.8294,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_right_5cm": {
+          "prompt": "move right 5.0 cm, open gripper",
+          "expected": "dy < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.5658,
+            "dy": -1.6268,
+            "dz": -0.8244,
+            "droll": 0.3989,
+            "dpitch": 0.5229,
+            "dyaw": -0.235,
+            "grip": 5.8438
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.6268,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_up_5cm": {
+          "prompt": "move up 5.0 cm, open gripper",
+          "expected": "dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.3518,
+            "dy": -2.1352,
+            "dz": -2.1332,
+            "droll": 0.4322,
+            "dpitch": 0.3378,
+            "dyaw": -0.4278,
+            "grip": 5.1641
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.1332,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_down_5cm": {
+          "prompt": "move down 5.0 cm, open gripper",
+          "expected": "dz < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.7876,
+            "dy": 1.0856,
+            "dz": -1.4067,
+            "droll": 0.1804,
+            "dpitch": 0.3859,
+            "dyaw": 0.2095,
+            "grip": 2.7378
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.4067,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_left_20deg": {
+          "prompt": "tilt left 20 degrees, open gripper",
+          "expected": "droll > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.7933,
+            "dy": -0.0354,
+            "dz": -2.8857,
+            "droll": 0.351,
+            "dpitch": 0.2529,
+            "dyaw": -0.0829,
+            "grip": 5.5273
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.351,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_20deg": {
+          "prompt": "tilt right 20 degrees, open gripper",
+          "expected": "droll < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.7865,
+            "dy": -0.0037,
+            "dz": -2.8711,
+            "droll": 0.3533,
+            "dpitch": 0.2492,
+            "dyaw": -0.0751,
+            "grip": 5.5586
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3533,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_back_20deg": {
+          "prompt": "tilt back 20 degrees, open gripper",
+          "expected": "dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.7511,
+            "dy": -0.1364,
+            "dz": -2.8894,
+            "droll": 0.3366,
+            "dpitch": 0.2708,
+            "dyaw": -0.1021,
+            "grip": 5.4844
+          },
+          "conditions": [
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2708,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_fwd_20deg": {
+          "prompt": "tilt forward 20 degrees, open gripper",
+          "expected": "dpitch < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.6442,
+            "dy": 0.2143,
+            "dz": -2.8033,
+            "droll": 0.3476,
+            "dpitch": 0.2307,
+            "dyaw": -0.0994,
+            "grip": 5.6211
+          },
+          "conditions": [
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.2307,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "rotate_ccw_20deg": {
+          "prompt": "rotate counterclockwise 20 degrees, open gripper",
+          "expected": "dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.2822,
+            "dy": 0.3331,
+            "dz": -2.4719,
+            "droll": 0.336,
+            "dpitch": 0.2213,
+            "dyaw": -0.1386,
+            "grip": 5.3086
+          },
+          "conditions": [
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.1386,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "rotate_cw_20deg": {
+          "prompt": "rotate clockwise 20 degrees, open gripper",
+          "expected": "dyaw < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.5807,
+            "dy": 0.0175,
+            "dz": -2.5745,
+            "droll": 0.3669,
+            "dpitch": 0.2611,
+            "dyaw": -0.1016,
+            "grip": 5.707
+          },
+          "conditions": [
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -0.1016,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "close_gripper": {
+          "prompt": "close gripper",
+          "expected": "grip < 0.5",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.3248,
+            "dy": 0.6794,
+            "dz": -2.7979,
+            "droll": 0.1243,
+            "dpitch": 0.173,
+            "dyaw": 0.3584,
+            "grip": 1.9355
+          },
+          "conditions": [
+            {
+              "dim": "grip",
+              "op": "<",
+              "threshold": 0.5,
+              "actual": 1.9355,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "open_gripper": {
+          "prompt": "open gripper",
+          "expected": "grip >= 0.5",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.8192,
+            "dy": -0.0914,
+            "dz": -2.3639,
+            "droll": 0.3775,
+            "dpitch": 0.3158,
+            "dyaw": -0.1843,
+            "grip": 5.3398
+          },
+          "conditions": [
+            {
+              "dim": "grip",
+              "op": ">=",
+              "threshold": 0.5,
+              "actual": 5.3398,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_up_close": {
+          "prompt": "move forward 3.0 cm, move up 2.0 cm, close gripper",
+          "expected": "dx > 0, dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.4654,
+            "dy": 0.3167,
+            "dz": -2.3895,
+            "droll": 0.1118,
+            "dpitch": 0.3131,
+            "dyaw": 0.4824,
+            "grip": 1.6299
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.4654,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.3895,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "left_down_open": {
+          "prompt": "move left 4.0 cm, move down 2.0 cm, open gripper",
+          "expected": "dy > 0, dz < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.246,
+            "dy": 1.5722,
+            "dz": -3.1366,
+            "droll": 0.1126,
+            "dpitch": 0.1994,
+            "dyaw": 0.1695,
+            "grip": 2.6045
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.5722,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -3.1366,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "back_right": {
+          "prompt": "move back 4.0 cm, move right 3.0 cm, close gripper",
+          "expected": "dx < 0, dy < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": -2.1977,
+            "dy": -1.2092,
+            "dz": -1.7413,
+            "droll": 0.0429,
+            "dpitch": 0.3703,
+            "dyaw": 0.5846,
+            "grip": 1.6572
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.1977,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.2092,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_left_up": {
+          "prompt": "move forward 3.0 cm, move left 2.0 cm, move up 2.0 cm, open gripper",
+          "expected": "dx > 0, dy > 0, dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 2.0061,
+            "dy": -0.2791,
+            "dz": -2.4994,
+            "droll": 0.363,
+            "dpitch": 0.38,
+            "dyaw": -0.445,
+            "grip": 5.3203
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 2.0061,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.2791,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.4994,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "back_left_down": {
+          "prompt": "move back 3.0 cm, move left 2.0 cm, move down 2.0 cm, open gripper",
+          "expected": "dx < 0, dy > 0, dz < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.5683,
+            "dy": -0.0289,
+            "dz": -2.9718,
+            "droll": 0.3028,
+            "dpitch": 0.2954,
+            "dyaw": -0.179,
+            "grip": 4.4863
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.5683,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.0289,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.9718,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "up_tilt_right": {
+          "prompt": "move up 3.0 cm, tilt right 10 degrees, open gripper",
+          "expected": "dz > 0, droll < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.5901,
+            "dy": -1.6941,
+            "dz": -2.0901,
+            "droll": 0.3898,
+            "dpitch": 0.3864,
+            "dyaw": -0.2723,
+            "grip": 5.5352
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.0901,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3898,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_tilt_left": {
+          "prompt": "move forward 3.0 cm, tilt left 10 degrees, open gripper",
+          "expected": "dx > 0, droll > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 2.1306,
+            "dy": -0.0778,
+            "dz": -2.0251,
+            "droll": 0.3304,
+            "dpitch": 0.4999,
+            "dyaw": -0.2367,
+            "grip": 5.3984
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 2.1306,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3304,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "down_tilt_back": {
+          "prompt": "move down 3.0 cm, tilt back 10 degrees, close gripper",
+          "expected": "dz < 0, dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": -1.0225,
+            "dy": 1.3159,
+            "dz": -2.8784,
+            "droll": 0.0913,
+            "dpitch": 0.2791,
+            "dyaw": 0.5955,
+            "grip": 1.6338
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.8784,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2791,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_rotate_cw": {
+          "prompt": "move forward 3.0 cm, rotate clockwise 10 degrees, close gripper",
+          "expected": "dx > 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.3103,
+            "dy": 0.9943,
+            "dz": -2.3456,
+            "droll": 0.09,
+            "dpitch": 0.3159,
+            "dyaw": 0.5128,
+            "grip": 1.9092
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.3103,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.5128,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "left_tilt_right_cw": {
+          "prompt": "move left 3.0 cm, tilt right 10 degrees, rotate clockwise 10 degrees, open gripper",
+          "expected": "dy > 0, droll < 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.0109,
+            "dy": 0.556,
+            "dz": -3.7445,
+            "droll": 0.1804,
+            "dpitch": 0.1539,
+            "dyaw": 0.104,
+            "grip": 3.9551
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.556,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.1804,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.104,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_left_tilt_back": {
+          "prompt": "tilt left 10 degrees, tilt back 10 degrees, open gripper",
+          "expected": "droll > 0, dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.7131,
+            "dy": 0.4184,
+            "dz": -2.4719,
+            "droll": 0.2929,
+            "dpitch": 0.2451,
+            "dyaw": 0.0196,
+            "grip": 5.375
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2929,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2451,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_tilt_fwd": {
+          "prompt": "tilt right 10 degrees, tilt forward 10 degrees, close gripper",
+          "expected": "droll < 0, dpitch < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -0.801,
+            "dy": 0.5766,
+            "dz": -2.9352,
+            "droll": 0.1618,
+            "dpitch": 0.225,
+            "dyaw": 0.3653,
+            "grip": 3.2852
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.1618,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.225,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_rotate_ccw": {
+          "prompt": "tilt right 10 degrees, rotate counterclockwise 10 degrees, open gripper",
+          "expected": "droll < 0, dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.4279,
+            "dy": 0.4257,
+            "dz": -2.6294,
+            "droll": 0.335,
+            "dpitch": 0.2369,
+            "dyaw": -0.0116,
+            "grip": 5.8047
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.335,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.0116,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "data_6axis_a": {
+          "prompt": "move forward 2.5 cm, move right 1.0 cm, move up 3.0 cm, tilt left 10 degrees, tilt back 10 degrees, rotate clockwise 10 degrees, close gripper",
+          "expected": "dx > 0, dy < 0, dz > 0, droll > 0, dpitch > 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.2989,
+            "dy": -0.3399,
+            "dz": -2.3428,
+            "droll": 0.1106,
+            "dpitch": 0.2862,
+            "dyaw": 0.5159,
+            "grip": 2.4648
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.2989,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -0.3399,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.3428,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.1106,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2862,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.5159,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "data_6axis_b": {
+          "prompt": "move forward 1.5 cm, move left 2.0 cm, move down 3.0 cm, tilt right 10 degrees, tilt forward 10 degrees, rotate counterclockwise 10 degrees, open gripper",
+          "expected": "dx > 0, dy > 0, dz < 0, droll < 0, dpitch < 0, dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.2879,
+            "dy": 1.4962,
+            "dz": -3.4406,
+            "droll": 0.1295,
+            "dpitch": 0.2008,
+            "dyaw": 0.3852,
+            "grip": 2.3291
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2879,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.4962,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -3.4406,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.1295,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.2008,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3852,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        }
+      }
+    },
+    "chunk_3": {
+      "prompt_accuracy": {
+        "correct": 12,
+        "total": 29
+      },
+      "condition_accuracy": {
+        "correct": 28,
+        "total": 55
+      },
+      "per_dim_accuracy": {
+        "dx": {
+          "correct": 5,
+          "total": 10,
+          "accuracy": 0.5
+        },
+        "dy": {
+          "correct": 8,
+          "total": 9,
+          "accuracy": 0.889
+        },
+        "dz": {
+          "correct": 5,
+          "total": 10,
+          "accuracy": 0.5
+        },
+        "droll": {
+          "correct": 4,
+          "total": 10,
+          "accuracy": 0.4
+        },
+        "dpitch": {
+          "correct": 4,
+          "total": 7,
+          "accuracy": 0.571
+        },
+        "dyaw": {
+          "correct": 1,
+          "total": 7,
+          "accuracy": 0.143
+        },
+        "grip": {
+          "correct": 1,
+          "total": 2,
+          "accuracy": 0.5
+        }
+      },
+      "prompts": {
+        "move_forward_5cm": {
+          "prompt": "move forward 5.0 cm, open gripper",
+          "expected": "dx > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 2.3246,
+            "dy": 0.8906,
+            "dz": -1.4868,
+            "droll": 0.3324,
+            "dpitch": 0.4015,
+            "dyaw": -0.4623,
+            "grip": 4.9414
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 2.3246,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_back_5cm": {
+          "prompt": "move back 5.0 cm, open gripper",
+          "expected": "dx < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.3114,
+            "dy": -1.965,
+            "dz": -1.7386,
+            "droll": 0.4024,
+            "dpitch": 0.3789,
+            "dyaw": -0.4589,
+            "grip": 4.7539
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3114,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_left_5cm": {
+          "prompt": "move left 5.0 cm, open gripper",
+          "expected": "dy > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": -0.1896,
+            "dy": 1.2101,
+            "dz": -3.4698,
+            "droll": 0.1046,
+            "dpitch": 0.1405,
+            "dyaw": 0.1384,
+            "grip": 2.5635
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.2101,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_right_5cm": {
+          "prompt": "move right 5.0 cm, open gripper",
+          "expected": "dy < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.2866,
+            "dy": -1.3033,
+            "dz": -0.3516,
+            "droll": 0.4474,
+            "dpitch": 0.4823,
+            "dyaw": -0.3035,
+            "grip": 5.3984
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.3033,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_up_5cm": {
+          "prompt": "move up 5.0 cm, open gripper",
+          "expected": "dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.2615,
+            "dy": -1.8644,
+            "dz": -2.0325,
+            "droll": 0.4186,
+            "dpitch": 0.2916,
+            "dyaw": -0.4578,
+            "grip": 5.2695
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.0325,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_down_5cm": {
+          "prompt": "move down 5.0 cm, open gripper",
+          "expected": "dz < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.7855,
+            "dy": 1.0104,
+            "dz": -1.4328,
+            "droll": 0.2831,
+            "dpitch": 0.4269,
+            "dyaw": -0.1122,
+            "grip": 4.5527
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.4328,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_left_20deg": {
+          "prompt": "tilt left 20 degrees, open gripper",
+          "expected": "droll > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.7562,
+            "dy": 0.7905,
+            "dz": -2.4628,
+            "droll": 0.3455,
+            "dpitch": 0.2212,
+            "dyaw": -0.0129,
+            "grip": 4.5469
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3455,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_20deg": {
+          "prompt": "tilt right 20 degrees, open gripper",
+          "expected": "droll < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.9073,
+            "dy": 0.6741,
+            "dz": -2.3584,
+            "droll": 0.3625,
+            "dpitch": 0.2179,
+            "dyaw": -0.0679,
+            "grip": 4.7285
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3625,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_back_20deg": {
+          "prompt": "tilt back 20 degrees, open gripper",
+          "expected": "dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.0365,
+            "dy": 0.6207,
+            "dz": -2.3712,
+            "droll": 0.3703,
+            "dpitch": 0.2507,
+            "dyaw": -0.1414,
+            "grip": 4.9727
+          },
+          "conditions": [
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2507,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_fwd_20deg": {
+          "prompt": "tilt forward 20 degrees, open gripper",
+          "expected": "dpitch < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.1168,
+            "dy": 1.0155,
+            "dz": -2.2,
+            "droll": 0.3328,
+            "dpitch": 0.2134,
+            "dyaw": -0.1228,
+            "grip": 5.082
+          },
+          "conditions": [
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.2134,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "rotate_ccw_20deg": {
+          "prompt": "rotate counterclockwise 20 degrees, open gripper",
+          "expected": "dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.8601,
+            "dy": 1.078,
+            "dz": -2.406,
+            "droll": 0.3468,
+            "dpitch": 0.2332,
+            "dyaw": -0.0551,
+            "grip": 5.2148
+          },
+          "conditions": [
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.0551,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "rotate_cw_20deg": {
+          "prompt": "rotate clockwise 20 degrees, open gripper",
+          "expected": "dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.8888,
+            "dy": 0.8025,
+            "dz": -2.3502,
+            "droll": 0.3756,
+            "dpitch": 0.2027,
+            "dyaw": 0.0941,
+            "grip": 4.6387
+          },
+          "conditions": [
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.0941,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "close_gripper": {
+          "prompt": "close gripper",
+          "expected": "grip < 0.5",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -0.774,
+            "dy": 0.6473,
+            "dz": -2.5763,
+            "droll": 0.2074,
+            "dpitch": 0.2077,
+            "dyaw": 0.1707,
+            "grip": 2.5215
+          },
+          "conditions": [
+            {
+              "dim": "grip",
+              "op": "<",
+              "threshold": 0.5,
+              "actual": 2.5215,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "open_gripper": {
+          "prompt": "open gripper",
+          "expected": "grip >= 0.5",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.0552,
+            "dy": 0.6029,
+            "dz": -1.9666,
+            "droll": 0.3282,
+            "dpitch": 0.2397,
+            "dyaw": 0.0071,
+            "grip": 4.5039
+          },
+          "conditions": [
+            {
+              "dim": "grip",
+              "op": ">=",
+              "threshold": 0.5,
+              "actual": 4.5039,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_up_close": {
+          "prompt": "move forward 3.0 cm, move up 2.0 cm, close gripper",
+          "expected": "dx > 0, dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.6255,
+            "dy": 0.809,
+            "dz": -2.8491,
+            "droll": 0.1077,
+            "dpitch": 0.278,
+            "dyaw": 0.5382,
+            "grip": 2.1992
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.6255,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.8491,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "left_down_open": {
+          "prompt": "move left 4.0 cm, move down 2.0 cm, open gripper",
+          "expected": "dy > 0, dz < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": -0.0161,
+            "dy": 1.7753,
+            "dz": -2.9938,
+            "droll": 0.0921,
+            "dpitch": 0.1906,
+            "dyaw": 0.2575,
+            "grip": 2.207
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.7753,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.9938,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "back_right": {
+          "prompt": "move back 4.0 cm, move right 3.0 cm, close gripper",
+          "expected": "dx < 0, dy < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": -2.1395,
+            "dy": -1.0997,
+            "dz": -1.604,
+            "droll": 0.0503,
+            "dpitch": 0.3673,
+            "dyaw": 0.5753,
+            "grip": 1.9717
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.1395,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.0997,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_left_up": {
+          "prompt": "move forward 3.0 cm, move left 2.0 cm, move up 2.0 cm, open gripper",
+          "expected": "dx > 0, dy > 0, dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.8267,
+            "dy": 0.0536,
+            "dz": -2.4792,
+            "droll": 0.3637,
+            "dpitch": 0.3043,
+            "dyaw": -0.4489,
+            "grip": 5.2891
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.8267,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.0536,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.4792,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "back_left_down": {
+          "prompt": "move back 3.0 cm, move left 2.0 cm, move down 2.0 cm, open gripper",
+          "expected": "dx < 0, dy > 0, dz < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.0391,
+            "dy": 0.4564,
+            "dz": -2.5671,
+            "droll": 0.2035,
+            "dpitch": 0.2386,
+            "dyaw": 0.0658,
+            "grip": 3.2734
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.0391,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.4564,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.5671,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "up_tilt_right": {
+          "prompt": "move up 3.0 cm, tilt right 10 degrees, open gripper",
+          "expected": "dz > 0, droll < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.4015,
+            "dy": -1.5238,
+            "dz": -2.0572,
+            "droll": 0.3782,
+            "dpitch": 0.3046,
+            "dyaw": -0.301,
+            "grip": 5.5039
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.0572,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3782,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_tilt_left": {
+          "prompt": "move forward 3.0 cm, tilt left 10 degrees, open gripper",
+          "expected": "dx > 0, droll > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.8554,
+            "dy": 0.1747,
+            "dz": -1.9418,
+            "droll": 0.3346,
+            "dpitch": 0.3741,
+            "dyaw": -0.3158,
+            "grip": 5.4062
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.8554,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3346,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "down_tilt_back": {
+          "prompt": "move down 3.0 cm, tilt back 10 degrees, close gripper",
+          "expected": "dz < 0, dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": -1.0629,
+            "dy": 1.4939,
+            "dz": -2.9425,
+            "droll": 0.0743,
+            "dpitch": 0.1939,
+            "dyaw": 0.5404,
+            "grip": 1.9092
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.9425,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.1939,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_rotate_cw": {
+          "prompt": "move forward 3.0 cm, rotate clockwise 10 degrees, close gripper",
+          "expected": "dx > 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.2375,
+            "dy": 1.7206,
+            "dz": -2.7374,
+            "droll": 0.0791,
+            "dpitch": 0.2781,
+            "dyaw": 0.5087,
+            "grip": 2.5234
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.2375,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.5087,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "left_tilt_right_cw": {
+          "prompt": "move left 3.0 cm, tilt right 10 degrees, rotate clockwise 10 degrees, open gripper",
+          "expected": "dy > 0, droll < 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -0.7202,
+            "dy": 1.1716,
+            "dz": -3.7225,
+            "droll": 0.1007,
+            "dpitch": 0.0866,
+            "dyaw": 0.3229,
+            "grip": 2.7656
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.1716,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.1007,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3229,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_left_tilt_back": {
+          "prompt": "tilt left 10 degrees, tilt back 10 degrees, open gripper",
+          "expected": "droll > 0, dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.0,
+            "dy": 1.1465,
+            "dz": -2.2925,
+            "droll": 0.3357,
+            "dpitch": 0.2452,
+            "dyaw": -0.147,
+            "grip": 4.9648
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3357,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2452,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_tilt_fwd": {
+          "prompt": "tilt right 10 degrees, tilt forward 10 degrees, close gripper",
+          "expected": "droll < 0, dpitch < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -0.2482,
+            "dy": 0.8805,
+            "dz": -3.5907,
+            "droll": 0.2048,
+            "dpitch": 0.2158,
+            "dyaw": 0.1529,
+            "grip": 3.0967
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.2048,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.2158,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_rotate_ccw": {
+          "prompt": "tilt right 10 degrees, rotate counterclockwise 10 degrees, open gripper",
+          "expected": "droll < 0, dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.9339,
+            "dy": 0.9408,
+            "dz": -2.3337,
+            "droll": 0.3509,
+            "dpitch": 0.2198,
+            "dyaw": -0.0185,
+            "grip": 4.8613
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3509,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.0185,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "data_6axis_a": {
+          "prompt": "move forward 2.5 cm, move right 1.0 cm, move up 3.0 cm, tilt left 10 degrees, tilt back 10 degrees, rotate clockwise 10 degrees, close gripper",
+          "expected": "dx > 0, dy < 0, dz > 0, droll > 0, dpitch > 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.1049,
+            "dy": 0.1574,
+            "dz": -2.5598,
+            "droll": 0.0951,
+            "dpitch": 0.2749,
+            "dyaw": 0.5924,
+            "grip": 3.2344
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.1049,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.1574,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.5598,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.0951,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2749,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.5924,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "data_6axis_b": {
+          "prompt": "move forward 1.5 cm, move left 2.0 cm, move down 3.0 cm, tilt right 10 degrees, tilt forward 10 degrees, rotate counterclockwise 10 degrees, open gripper",
+          "expected": "dx > 0, dy > 0, dz < 0, droll < 0, dpitch < 0, dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.1333,
+            "dy": 2.1366,
+            "dz": -2.9993,
+            "droll": 0.1081,
+            "dpitch": 0.197,
+            "dyaw": 0.4827,
+            "grip": 1.8662
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.1333,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 2.1366,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.9993,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.1081,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.197,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.4827,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        }
+      }
+    },
+    "chunk_6": {
+      "prompt_accuracy": {
+        "correct": 13,
+        "total": 29
+      },
+      "condition_accuracy": {
+        "correct": 28,
+        "total": 55
+      },
+      "per_dim_accuracy": {
+        "dx": {
+          "correct": 4,
+          "total": 10,
+          "accuracy": 0.4
+        },
+        "dy": {
+          "correct": 7,
+          "total": 9,
+          "accuracy": 0.778
+        },
+        "dz": {
+          "correct": 5,
+          "total": 10,
+          "accuracy": 0.5
+        },
+        "droll": {
+          "correct": 4,
+          "total": 10,
+          "accuracy": 0.4
+        },
+        "dpitch": {
+          "correct": 4,
+          "total": 7,
+          "accuracy": 0.571
+        },
+        "dyaw": {
+          "correct": 3,
+          "total": 7,
+          "accuracy": 0.429
+        },
+        "grip": {
+          "correct": 1,
+          "total": 2,
+          "accuracy": 0.5
+        }
+      },
+      "prompts": {
+        "move_forward_5cm": {
+          "prompt": "move forward 5.0 cm, open gripper",
+          "expected": "dx > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 2.5008,
+            "dy": 0.4981,
+            "dz": -2.0746,
+            "droll": 0.3345,
+            "dpitch": 0.4063,
+            "dyaw": -0.4762,
+            "grip": 5.2188
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 2.5008,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_back_5cm": {
+          "prompt": "move back 5.0 cm, open gripper",
+          "expected": "dx < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.5041,
+            "dy": -1.5765,
+            "dz": -2.1057,
+            "droll": 0.4191,
+            "dpitch": 0.2999,
+            "dyaw": -0.5347,
+            "grip": 5.1836
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.5041,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_left_5cm": {
+          "prompt": "move left 5.0 cm, open gripper",
+          "expected": "dy > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.5918,
+            "dy": 0.5379,
+            "dz": -3.3618,
+            "droll": 0.205,
+            "dpitch": 0.1858,
+            "dyaw": -0.2144,
+            "grip": 4.0234
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.5379,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_right_5cm": {
+          "prompt": "move right 5.0 cm, open gripper",
+          "expected": "dy < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.2568,
+            "dy": -1.5336,
+            "dz": -0.8091,
+            "droll": 0.3817,
+            "dpitch": 0.5172,
+            "dyaw": -0.3007,
+            "grip": 6.1562
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.5336,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_up_5cm": {
+          "prompt": "move up 5.0 cm, open gripper",
+          "expected": "dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.2827,
+            "dy": -2.2163,
+            "dz": -2.2412,
+            "droll": 0.4383,
+            "dpitch": 0.3011,
+            "dyaw": -0.5202,
+            "grip": 5.2852
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.2412,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "move_down_5cm": {
+          "prompt": "move down 5.0 cm, open gripper",
+          "expected": "dz < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.5395,
+            "dy": 1.6383,
+            "dz": -1.875,
+            "droll": 0.0873,
+            "dpitch": 0.3659,
+            "dyaw": 0.2254,
+            "grip": 2.8955
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.875,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_left_20deg": {
+          "prompt": "tilt left 20 degrees, open gripper",
+          "expected": "droll > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.9047,
+            "dy": 0.198,
+            "dz": -2.5616,
+            "droll": 0.3463,
+            "dpitch": 0.3281,
+            "dyaw": -0.391,
+            "grip": 4.9336
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3463,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_20deg": {
+          "prompt": "tilt right 20 degrees, open gripper",
+          "expected": "droll < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.9296,
+            "dy": 0.1435,
+            "dz": -2.3502,
+            "droll": 0.3444,
+            "dpitch": 0.3503,
+            "dyaw": -0.3553,
+            "grip": 4.9688
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3444,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_back_20deg": {
+          "prompt": "tilt back 20 degrees, open gripper",
+          "expected": "dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.9342,
+            "dy": 0.0826,
+            "dz": -2.2137,
+            "droll": 0.353,
+            "dpitch": 0.2849,
+            "dyaw": -0.3642,
+            "grip": 5.1992
+          },
+          "conditions": [
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2849,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_fwd_20deg": {
+          "prompt": "tilt forward 20 degrees, open gripper",
+          "expected": "dpitch < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.274,
+            "dy": 0.5705,
+            "dz": -2.2632,
+            "droll": 0.3272,
+            "dpitch": 0.3151,
+            "dyaw": -0.4489,
+            "grip": 5.1914
+          },
+          "conditions": [
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3151,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "rotate_ccw_20deg": {
+          "prompt": "rotate counterclockwise 20 degrees, open gripper",
+          "expected": "dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.7561,
+            "dy": 0.305,
+            "dz": -2.8784,
+            "droll": 0.3605,
+            "dpitch": 0.2422,
+            "dyaw": -0.3548,
+            "grip": 5.2891
+          },
+          "conditions": [
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.3548,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "rotate_cw_20deg": {
+          "prompt": "rotate clockwise 20 degrees, open gripper",
+          "expected": "dyaw < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.997,
+            "dy": 0.2817,
+            "dz": -2.5946,
+            "droll": 0.3593,
+            "dpitch": 0.2835,
+            "dyaw": -0.4161,
+            "grip": 5.2305
+          },
+          "conditions": [
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -0.4161,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "close_gripper": {
+          "prompt": "close gripper",
+          "expected": "grip < 0.5",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -0.5173,
+            "dy": 0.9443,
+            "dz": -2.8033,
+            "droll": 0.163,
+            "dpitch": 0.1682,
+            "dyaw": 0.3585,
+            "grip": 1.8281
+          },
+          "conditions": [
+            {
+              "dim": "grip",
+              "op": "<",
+              "threshold": 0.5,
+              "actual": 1.8281,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "open_gripper": {
+          "prompt": "open gripper",
+          "expected": "grip >= 0.5",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 1.2194,
+            "dy": 0.3015,
+            "dz": -2.3566,
+            "droll": 0.3641,
+            "dpitch": 0.3281,
+            "dyaw": -0.2617,
+            "grip": 5.2578
+          },
+          "conditions": [
+            {
+              "dim": "grip",
+              "op": ">=",
+              "threshold": 0.5,
+              "actual": 5.2578,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_up_close": {
+          "prompt": "move forward 3.0 cm, move up 2.0 cm, close gripper",
+          "expected": "dx > 0, dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.6416,
+            "dy": 0.6294,
+            "dz": -2.6715,
+            "droll": 0.1114,
+            "dpitch": 0.2954,
+            "dyaw": 0.5063,
+            "grip": 2.3242
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.6416,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.6715,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "left_down_open": {
+          "prompt": "move left 4.0 cm, move down 2.0 cm, open gripper",
+          "expected": "dy > 0, dz < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.0416,
+            "dy": 1.3299,
+            "dz": -3.2758,
+            "droll": 0.139,
+            "dpitch": 0.1785,
+            "dyaw": 0.004,
+            "grip": 3.0938
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.3299,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -3.2758,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "back_right": {
+          "prompt": "move back 4.0 cm, move right 3.0 cm, close gripper",
+          "expected": "dx < 0, dy < 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": -1.9278,
+            "dy": -0.7778,
+            "dz": -1.864,
+            "droll": 0.0756,
+            "dpitch": 0.3709,
+            "dyaw": 0.5757,
+            "grip": 2.3281
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -1.9278,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -0.7778,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_left_up": {
+          "prompt": "move forward 3.0 cm, move left 2.0 cm, move up 2.0 cm, open gripper",
+          "expected": "dx > 0, dy > 0, dz > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.895,
+            "dy": -0.4174,
+            "dz": -2.71,
+            "droll": 0.3822,
+            "dpitch": 0.3075,
+            "dyaw": -0.5197,
+            "grip": 5.4883
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 1.895,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.4174,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.71,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "back_left_down": {
+          "prompt": "move back 3.0 cm, move left 2.0 cm, move down 2.0 cm, open gripper",
+          "expected": "dx < 0, dy > 0, dz < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.9144,
+            "dy": -0.0711,
+            "dz": -2.9169,
+            "droll": 0.3548,
+            "dpitch": 0.2596,
+            "dyaw": -0.4305,
+            "grip": 4.9766
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.9144,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.0711,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.9169,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "up_tilt_right": {
+          "prompt": "move up 3.0 cm, tilt right 10 degrees, open gripper",
+          "expected": "dz > 0, droll < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 1.3672,
+            "dy": -1.8109,
+            "dz": -2.1826,
+            "droll": 0.4208,
+            "dpitch": 0.2954,
+            "dyaw": -0.4372,
+            "grip": 5.6133
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.1826,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.4208,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_tilt_left": {
+          "prompt": "move forward 3.0 cm, tilt left 10 degrees, open gripper",
+          "expected": "dx > 0, droll > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 2.091,
+            "dy": -0.0166,
+            "dz": -2.4728,
+            "droll": 0.3118,
+            "dpitch": 0.4288,
+            "dyaw": -0.3219,
+            "grip": 5.8711
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 2.091,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3118,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "down_tilt_back": {
+          "prompt": "move down 3.0 cm, tilt back 10 degrees, close gripper",
+          "expected": "dz < 0, dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": -0.9182,
+            "dy": 1.8982,
+            "dz": -2.3053,
+            "droll": 0.0554,
+            "dpitch": 0.3006,
+            "dyaw": 0.468,
+            "grip": 1.998
+          },
+          "conditions": [
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -2.3053,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3006,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "fwd_rotate_cw": {
+          "prompt": "move forward 3.0 cm, rotate clockwise 10 degrees, close gripper",
+          "expected": "dx > 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.4832,
+            "dy": 1.526,
+            "dz": -2.3822,
+            "droll": 0.0803,
+            "dpitch": 0.2862,
+            "dyaw": 0.4091,
+            "grip": 2.416
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.4832,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.4091,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "left_tilt_right_cw": {
+          "prompt": "move left 3.0 cm, tilt right 10 degrees, rotate clockwise 10 degrees, open gripper",
+          "expected": "dy > 0, droll < 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -0.0055,
+            "dy": 0.3267,
+            "dz": -3.338,
+            "droll": 0.2647,
+            "dpitch": 0.1686,
+            "dyaw": -0.2402,
+            "grip": 4.248
+          },
+          "conditions": [
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3267,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.2647,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -0.2402,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_left_tilt_back": {
+          "prompt": "tilt left 10 degrees, tilt back 10 degrees, open gripper",
+          "expected": "droll > 0, dpitch > 0",
+          "all_correct": true,
+          "summed_actions": {
+            "dx": 0.802,
+            "dy": 0.2779,
+            "dz": -2.1945,
+            "droll": 0.3351,
+            "dpitch": 0.3437,
+            "dyaw": -0.4066,
+            "grip": 5.1328
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3351,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.3437,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_tilt_fwd": {
+          "prompt": "tilt right 10 degrees, tilt forward 10 degrees, close gripper",
+          "expected": "droll < 0, dpitch < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -0.1089,
+            "dy": 0.9026,
+            "dz": -2.6862,
+            "droll": 0.2664,
+            "dpitch": 0.2373,
+            "dyaw": 0.1251,
+            "grip": 3.167
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.2664,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.2373,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "tilt_right_rotate_ccw": {
+          "prompt": "tilt right 10 degrees, rotate counterclockwise 10 degrees, open gripper",
+          "expected": "droll < 0, dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": 0.5377,
+            "dy": 0.1693,
+            "dz": -2.8656,
+            "droll": 0.3412,
+            "dpitch": 0.2581,
+            "dyaw": -0.3821,
+            "grip": 4.875
+          },
+          "conditions": [
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.3412,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.3821,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "data_6axis_a": {
+          "prompt": "move forward 2.5 cm, move right 1.0 cm, move up 3.0 cm, tilt left 10 degrees, tilt back 10 degrees, rotate clockwise 10 degrees, close gripper",
+          "expected": "dx > 0, dy < 0, dz > 0, droll > 0, dpitch > 0, dyaw < 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -1.501,
+            "dy": -0.3314,
+            "dz": -2.5525,
+            "droll": 0.1096,
+            "dpitch": 0.2488,
+            "dyaw": 0.4822,
+            "grip": 3.3516
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -1.501,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -0.3314,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -2.5525,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.1096,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.2488,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.4822,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        },
+        "data_6axis_b": {
+          "prompt": "move forward 1.5 cm, move left 2.0 cm, move down 3.0 cm, tilt right 10 degrees, tilt forward 10 degrees, rotate counterclockwise 10 degrees, open gripper",
+          "expected": "dx > 0, dy > 0, dz < 0, droll < 0, dpitch < 0, dyaw > 0",
+          "all_correct": false,
+          "summed_actions": {
+            "dx": -0.5537,
+            "dy": 2.0457,
+            "dz": -3.2629,
+            "droll": 0.0528,
+            "dpitch": 0.1895,
+            "dyaw": 0.202,
+            "grip": 2.1748
+          },
+          "conditions": [
+            {
+              "dim": "dx",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": -0.5537,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dy",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 2.0457,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dz",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": -3.2629,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "droll",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.0528,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dpitch",
+              "op": "<",
+              "threshold": 0.0,
+              "actual": 0.1895,
+              "correct": {
+                "__numpy__": "AA==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            },
+            {
+              "dim": "dyaw",
+              "op": ">",
+              "threshold": 0.0,
+              "actual": 0.202,
+              "correct": {
+                "__numpy__": "AQ==",
+                "dtype": "|b1",
+                "shape": []
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

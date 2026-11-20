@@ -1,0 +1,1 @@
+precomputed from: ./mid_traj_states/libero_spatial_combined_nonum/task_0_pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate/sim_state_chunk_6.npy

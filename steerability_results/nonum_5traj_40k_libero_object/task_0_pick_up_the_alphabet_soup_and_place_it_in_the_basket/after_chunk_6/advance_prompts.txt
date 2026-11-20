@@ -1,0 +1,1 @@
+precomputed from: ./mid_traj_states/libero_object_combined_nonum/task_0_pick_up_the_alphabet_soup_and_place_it_in_the_basket/sim_state_chunk_6.npy

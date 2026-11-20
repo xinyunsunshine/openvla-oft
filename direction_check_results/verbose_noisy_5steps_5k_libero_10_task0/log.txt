@@ -1,0 +1,511 @@
+Loading model...
+Instantiating pretrained VLA policy...
+Created backup of original config at: /proj/inf-scaling/zwhong/idan/vla-rl/openvla-oft/runs/openvla-7b+libero_combined_langact_verbose_noisy_v2+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--langact_verbose--libero_all_morenoise_5steps--5000_chkpt/config.json.back.20260312_184239
+Updated config.json at: /proj/inf-scaling/zwhong/idan/vla-rl/openvla-oft/runs/openvla-7b+libero_combined_langact_verbose_noisy_v2+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--langact_verbose--libero_all_morenoise_5steps--5000_chkpt/config.json
+Changes made:
+  - Set AutoConfig to "configuration_prismatic.OpenVLAConfig"
+  - Set AutoModelForVision2Seq to "modeling_prismatic.OpenVLAForActionPrediction"
+Loaded model: <class 'transformers_modules.openvla-7b+libero_combined_langact_verbose_noisy_v2+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--langact_verbose--libero_all_morenoise_5steps--5000_chkpt.modeling_prismatic.OpenVLAForActionPrediction'>
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[Warning]: datasets path /proj/inf-scaling/zwhong/idan/vla-rl/RLinf/.venv-oft/libero/libero/libero/../datasets does not exist!
+Task 0: put both the alphabet soup and the tomato sauce in the basket
+Checkpoint: /proj/inf-scaling/zwhong/idan/vla-rl/openvla-oft/runs/openvla-7b+libero_combined_langact_verbose_noisy_v2+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--langact_verbose--libero_all_morenoise_5steps--5000_chkpt
+Output: direction_check_results/verbose_noisy_5steps_5k_libero_10_task0
+[Warning]: datasets path /proj/inf-scaling/zwhong/idan/vla-rl/RLinf/.venv-oft/libero/libero/libero/../datasets does not exist!
+
+========================================================================================================================
+  State: INITIAL
+========================================================================================================================
+
+  move_forward_5cm                    [OK]
+    prompt:  move forward 5.0 cm, open gripper
+    checks:  dx>0:+5.088[ok]
+    all_dims: dx=+5.088 dy=-1.877 dz=-0.895 droll=+0.239 dpitch=-0.189 dyaw=-0.408 grip=+6.207
+
+  move_back_5cm                       [WRONG]
+    prompt:  move back 5.0 cm, open gripper
+    checks:  dx<0:+2.376[FAIL]
+    all_dims: dx=+2.376 dy=-0.071 dz=-2.175 droll=+0.187 dpitch=-0.142 dyaw=-0.021 grip=+6.602
+
+  move_left_5cm                       [WRONG]
+    prompt:  move left 5.0 cm, open gripper
+    checks:  dy>0:-0.461[FAIL]
+    all_dims: dx=+4.661 dy=-0.461 dz=-1.436 droll=+0.209 dpitch=+0.080 dyaw=-0.106 grip=+5.551
+
+  move_right_5cm                      [OK]
+    prompt:  move right 5.0 cm, open gripper
+    checks:  dy<0:-1.762[ok]
+    all_dims: dx=+3.048 dy=-1.762 dz=-1.649 droll=+0.304 dpitch=-0.310 dyaw=-0.266 grip=+7.797
+
+  move_up_5cm                         [WRONG]
+    prompt:  move up 5.0 cm, open gripper
+    checks:  dz>0:-1.866[FAIL]
+    all_dims: dx=+2.684 dy=-0.303 dz=-1.866 droll=+0.225 dpitch=-0.336 dyaw=-0.176 grip=+6.984
+
+  move_down_5cm                       [OK]
+    prompt:  move down 5.0 cm, open gripper
+    checks:  dz<0:-1.388[ok]
+    all_dims: dx=+4.752 dy=-1.783 dz=-1.388 droll=+0.264 dpitch=+0.047 dyaw=-0.140 grip=+6.320
+
+  tilt_left_20deg                     [OK]
+    prompt:  tilt left 20 degrees, open gripper
+    checks:  droll>0:+0.157[ok]
+    all_dims: dx=+3.121 dy=+0.269 dz=-0.861 droll=+0.157 dpitch=-0.154 dyaw=-0.252 grip=+6.156
+
+  tilt_right_20deg                    [WRONG]
+    prompt:  tilt right 20 degrees, open gripper
+    checks:  droll<0:+0.162[FAIL]
+    all_dims: dx=+3.150 dy=+0.297 dz=-0.767 droll=+0.162 dpitch=-0.158 dyaw=-0.263 grip=+6.117
+
+  tilt_back_20deg                     [WRONG]
+    prompt:  tilt back 20 degrees, open gripper
+    checks:  dpitch>0:-0.157[FAIL]
+    all_dims: dx=+3.027 dy=+0.404 dz=-1.028 droll=+0.151 dpitch=-0.157 dyaw=-0.211 grip=+6.051
+
+  tilt_fwd_20deg                      [OK]
+    prompt:  tilt forward 20 degrees, open gripper
+    checks:  dpitch<0:-0.166[ok]
+    all_dims: dx=+3.126 dy=+0.192 dz=-0.710 droll=+0.150 dpitch=-0.166 dyaw=-0.277 grip=+6.016
+
+  rotate_ccw_20deg                    [WRONG]
+    prompt:  rotate counterclockwise 20 degrees, open gripper
+    checks:  dyaw>0:-0.245[FAIL]
+    all_dims: dx=+2.990 dy=+0.306 dz=-0.681 droll=+0.189 dpitch=-0.293 dyaw=-0.245 grip=+6.418
+
+  rotate_cw_20deg                     [OK]
+    prompt:  rotate clockwise 20 degrees, open gripper
+    checks:  dyaw<0:-0.241[ok]
+    all_dims: dx=+3.129 dy=+0.010 dz=-1.010 droll=+0.191 dpitch=-0.208 dyaw=-0.241 grip=+6.430
+
+  close_gripper                       [WRONG]
+    prompt:  close gripper
+    checks:  grip<0.5:+3.920[FAIL]
+    all_dims: dx=+1.898 dy=+1.599 dz=-0.546 droll=+0.109 dpitch=+0.219 dyaw=-0.204 grip=+3.920
+
+  open_gripper                        [OK]
+    prompt:  open gripper
+    checks:  grip>=0.5:+6.480[ok]
+    all_dims: dx=+3.289 dy=+0.305 dz=-0.979 droll=+0.159 dpitch=-0.156 dyaw=-0.277 grip=+6.480
+
+  fwd_up_close                        [WRONG]
+    prompt:  move forward 3.0 cm, move up 2.0 cm, close gripper
+    checks:  dx>0:+2.587[ok], dz>0:-1.053[FAIL]
+    all_dims: dx=+2.587 dy=+0.252 dz=-1.053 droll=+0.150 dpitch=+0.147 dyaw=-0.322 grip=+4.203
+
+  left_down_open                      [WRONG]
+    prompt:  move left 4.0 cm, move down 2.0 cm, open gripper
+    checks:  dy>0:-0.479[FAIL], dz<0:-1.218[ok]
+    all_dims: dx=+4.459 dy=-0.479 dz=-1.218 droll=+0.168 dpitch=+0.261 dyaw=-0.002 grip=+4.623
+
+  back_right                          [WRONG]
+    prompt:  move back 4.0 cm, move right 3.0 cm, close gripper
+    checks:  dx<0:+1.165[FAIL], dy<0:+0.466[FAIL]
+    all_dims: dx=+1.165 dy=+0.466 dz=-1.744 droll=+0.156 dpitch=+0.149 dyaw=-0.051 grip=+4.215
+
+  fwd_left_up                         [WRONG]
+    prompt:  move forward 3.0 cm, move left 2.0 cm, move up 2.0 cm, open gripper
+    checks:  dx>0:+4.616[ok], dy>0:-1.217[FAIL], dz>0:-1.216[FAIL]
+    all_dims: dx=+4.616 dy=-1.217 dz=-1.216 droll=+0.220 dpitch=-0.191 dyaw=-0.257 grip=+6.070
+
+  back_left_down                      [WRONG]
+    prompt:  move back 3.0 cm, move left 2.0 cm, move down 2.0 cm, open gripper
+    checks:  dx<0:+3.690[FAIL], dy>0:-0.141[FAIL], dz<0:-1.964[ok]
+    all_dims: dx=+3.690 dy=-0.141 dz=-1.964 droll=+0.199 dpitch=+0.029 dyaw=+0.000 grip=+6.066
+
+  up_tilt_right                       [WRONG]
+    prompt:  move up 3.0 cm, tilt right 10 degrees, open gripper
+    checks:  dz>0:-1.876[FAIL], droll<0:+0.236[FAIL]
+    all_dims: dx=+3.412 dy=-0.964 dz=-1.876 droll=+0.236 dpitch=-0.322 dyaw=-0.168 grip=+6.777
+
+  fwd_tilt_left                       [OK]
+    prompt:  move forward 3.0 cm, tilt left 10 degrees, open gripper
+    checks:  dx>0:+5.221[ok], droll>0:+0.238[ok]
+    all_dims: dx=+5.221 dy=-2.153 dz=-1.419 droll=+0.238 dpitch=-0.207 dyaw=-0.235 grip=+6.395
+
+  down_tilt_back                      [OK]
+    prompt:  move down 3.0 cm, tilt back 10 degrees, close gripper
+    checks:  dz<0:-1.548[ok], dpitch>0:+0.131[ok]
+    all_dims: dx=+3.729 dy=-1.233 dz=-1.548 droll=+0.220 dpitch=+0.131 dyaw=-0.133 grip=+5.789
+
+  fwd_rotate_cw                       [OK]
+    prompt:  move forward 3.0 cm, rotate clockwise 10 degrees, close gripper
+    checks:  dx>0:+3.339[ok], dyaw<0:-0.290[ok]
+    all_dims: dx=+3.339 dy=-0.233 dz=-0.391 droll=+0.154 dpitch=+0.245 dyaw=-0.290 grip=+4.418
+
+  left_tilt_right_cw                  [WRONG]
+    prompt:  move left 3.0 cm, tilt right 10 degrees, rotate clockwise 10 degrees, open gripper
+    checks:  dy>0:-0.759[FAIL], droll<0:+0.203[FAIL], dyaw<0:-0.127[ok]
+    all_dims: dx=+4.435 dy=-0.759 dz=-1.107 droll=+0.203 dpitch=+0.027 dyaw=-0.127 grip=+5.980
+
+  tilt_left_tilt_back                 [WRONG]
+    prompt:  tilt left 10 degrees, tilt back 10 degrees, open gripper
+    checks:  droll>0:+0.153[ok], dpitch>0:-0.172[FAIL]
+    all_dims: dx=+3.004 dy=+0.360 dz=-0.494 droll=+0.153 dpitch=-0.172 dyaw=-0.196 grip=+5.805
+
+  tilt_right_tilt_fwd                 [WRONG]
+    prompt:  tilt right 10 degrees, tilt forward 10 degrees, close gripper
+    checks:  droll<0:+0.104[FAIL], dpitch<0:+0.108[FAIL]
+    all_dims: dx=+2.043 dy=+1.355 dz=-0.994 droll=+0.104 dpitch=+0.108 dyaw=-0.071 grip=+4.523
+
+  tilt_right_rotate_ccw               [WRONG]
+    prompt:  tilt right 10 degrees, rotate counterclockwise 10 degrees, open gripper
+    checks:  droll<0:+0.213[FAIL], dyaw>0:-0.232[FAIL]
+    all_dims: dx=+3.255 dy=-0.052 dz=-1.081 droll=+0.213 dpitch=-0.300 dyaw=-0.232 grip=+6.062
+
+  data_6axis_a                        [WRONG]
+    prompt:  move forward 2.5 cm, move right 1.0 cm, move up 3.0 cm, tilt left 10 degrees, tilt back 10 degrees, rotate clockwise 10 degrees, close gripper
+    checks:  dx>0:+2.524[ok], dy<0:+0.202[FAIL], dz>0:-1.490[FAIL], droll>0:+0.122[ok], dpitch>0:+0.020[ok], dyaw<0:-0.288[ok]
+    all_dims: dx=+2.524 dy=+0.202 dz=-1.490 droll=+0.122 dpitch=+0.020 dyaw=-0.288 grip=+4.555
+
+  data_6axis_b                        [WRONG]
+    prompt:  move forward 1.5 cm, move left 2.0 cm, move down 3.0 cm, tilt right 10 degrees, tilt forward 10 degrees, rotate counterclockwise 10 degrees, open gripper
+    checks:  dx>0:+4.619[ok], dy>0:-1.122[FAIL], dz<0:-0.998[ok], droll<0:+0.196[FAIL], dpitch<0:+0.260[FAIL], dyaw>0:-0.110[FAIL]
+    all_dims: dx=+4.619 dy=-1.122 dz=-0.998 droll=+0.196 dpitch=+0.260 dyaw=-0.110 grip=+4.445
+
+========================================================================================================================
+  Prompt-level accuracy:    10/29 (34%) prompts with ALL conditions correct
+  Condition-level accuracy: 25/55 (45%) individual conditions correct
+
+  Per-dimension accuracy:
+          dx: 7/10 (70%)
+          dy: 1/9 (11%)
+          dz: 5/10 (50%)
+       droll: 4/10 (40%)
+      dpitch: 3/7 (43%)
+        dyaw: 4/7 (57%)
+        grip: 1/2 (50%)
+
+Loading sim state from: ./mid_traj_states/libero_10_combined_nonum/task_0_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket/sim_state_chunk_3.npy
+
+========================================================================================================================
+  State: AFTER CHUNK 3 (24 steps)
+========================================================================================================================
+
+  move_forward_5cm                    [OK]
+    prompt:  move forward 5.0 cm, open gripper
+    checks:  dx>0:+5.166[ok]
+    all_dims: dx=+5.166 dy=-1.926 dz=-0.798 droll=+0.235 dpitch=-0.203 dyaw=-0.445 grip=+6.477
+
+  move_back_5cm                       [WRONG]
+    prompt:  move back 5.0 cm, open gripper
+    checks:  dx<0:+2.253[FAIL]
+    all_dims: dx=+2.253 dy=-0.210 dz=-2.130 droll=+0.198 dpitch=-0.122 dyaw=-0.031 grip=+6.859
+
+  move_left_5cm                       [WRONG]
+    prompt:  move left 5.0 cm, open gripper
+    checks:  dy>0:-0.531[FAIL]
+    all_dims: dx=+4.616 dy=-0.531 dz=-1.276 droll=+0.182 dpitch=+0.223 dyaw=-0.070 grip=+5.129
+
+  move_right_5cm                      [OK]
+    prompt:  move right 5.0 cm, open gripper
+    checks:  dy<0:-1.343[ok]
+    all_dims: dx=+2.650 dy=-1.343 dz=-1.483 droll=+0.281 dpitch=-0.289 dyaw=-0.357 grip=+8.020
+
+  move_up_5cm                         [WRONG]
+    prompt:  move up 5.0 cm, open gripper
+    checks:  dz>0:-1.726[FAIL]
+    all_dims: dx=+2.607 dy=-0.252 dz=-1.726 droll=+0.214 dpitch=-0.333 dyaw=-0.205 grip=+7.133
+
+  move_down_5cm                       [OK]
+    prompt:  move down 5.0 cm, open gripper
+    checks:  dz<0:-1.091[ok]
+    all_dims: dx=+4.855 dy=-1.931 dz=-1.091 droll=+0.258 dpitch=+0.027 dyaw=-0.263 grip=+6.328
+
+  tilt_left_20deg                     [OK]
+    prompt:  tilt left 20 degrees, open gripper
+    checks:  droll>0:+0.192[ok]
+    all_dims: dx=+2.890 dy=+0.597 dz=-0.173 droll=+0.192 dpitch=-0.049 dyaw=-0.106 grip=+6.098
+
+  tilt_right_20deg                    [WRONG]
+    prompt:  tilt right 20 degrees, open gripper
+    checks:  droll<0:+0.195[FAIL]
+    all_dims: dx=+2.773 dy=+0.587 dz=-0.150 droll=+0.195 dpitch=-0.068 dyaw=-0.119 grip=+6.211
+
+  tilt_back_20deg                     [OK]
+    prompt:  tilt back 20 degrees, open gripper
+    checks:  dpitch>0:+0.002[ok]
+    all_dims: dx=+2.977 dy=+0.687 dz=-0.176 droll=+0.180 dpitch=+0.002 dyaw=-0.195 grip=+6.105
+
+  tilt_fwd_20deg                      [OK]
+    prompt:  tilt forward 20 degrees, open gripper
+    checks:  dpitch<0:-0.139[ok]
+    all_dims: dx=+2.793 dy=+0.681 dz=-0.601 droll=+0.200 dpitch=-0.139 dyaw=-0.111 grip=+6.184
+
+  rotate_ccw_20deg                    [WRONG]
+    prompt:  rotate counterclockwise 20 degrees, open gripper
+    checks:  dyaw>0:-0.209[FAIL]
+    all_dims: dx=+2.952 dy=+0.764 dz=-0.006 droll=+0.152 dpitch=-0.174 dyaw=-0.209 grip=+6.203
+
+  rotate_cw_20deg                     [OK]
+    prompt:  rotate clockwise 20 degrees, open gripper
+    checks:  dyaw<0:-0.209[ok]
+    all_dims: dx=+2.880 dy=+0.648 dz=-0.097 droll=+0.167 dpitch=-0.127 dyaw=-0.209 grip=+5.961
+
+  close_gripper                       [WRONG]
+    prompt:  close gripper
+    checks:  grip<0.5:+5.262[FAIL]
+    all_dims: dx=+2.789 dy=+1.103 dz=-0.619 droll=+0.099 dpitch=+0.104 dyaw=-0.176 grip=+5.262
+
+  open_gripper                        [OK]
+    prompt:  open gripper
+    checks:  grip>=0.5:+5.969[ok]
+    all_dims: dx=+2.371 dy=+0.849 dz=+0.030 droll=+0.177 dpitch=-0.050 dyaw=-0.144 grip=+5.969
+
+  fwd_up_close                        [WRONG]
+    prompt:  move forward 3.0 cm, move up 2.0 cm, close gripper
+    checks:  dx>0:+2.911[ok], dz>0:-0.494[FAIL]
+    all_dims: dx=+2.911 dy=-0.199 dz=-0.494 droll=+0.147 dpitch=+0.223 dyaw=-0.333 grip=+4.523
+
+  left_down_open                      [WRONG]
+    prompt:  move left 4.0 cm, move down 2.0 cm, open gripper
+    checks:  dy>0:-0.882[FAIL], dz<0:-1.059[ok]
+    all_dims: dx=+4.652 dy=-0.882 dz=-1.059 droll=+0.185 dpitch=+0.235 dyaw=-0.071 grip=+5.039
+
+  back_right                          [WRONG]
+    prompt:  move back 4.0 cm, move right 3.0 cm, close gripper
+    checks:  dx<0:+1.385[FAIL], dy<0:-0.045[ok]
+    all_dims: dx=+1.385 dy=-0.045 dz=-1.672 droll=+0.159 dpitch=+0.164 dyaw=-0.051 grip=+4.660
+
+  fwd_left_up                         [WRONG]
+    prompt:  move forward 3.0 cm, move left 2.0 cm, move up 2.0 cm, open gripper
+    checks:  dx>0:+4.509[ok], dy>0:-1.144[FAIL], dz>0:-1.114[FAIL]
+    all_dims: dx=+4.509 dy=-1.144 dz=-1.114 droll=+0.213 dpitch=-0.130 dyaw=-0.276 grip=+6.145
+
+  back_left_down                      [WRONG]
+    prompt:  move back 3.0 cm, move left 2.0 cm, move down 2.0 cm, open gripper
+    checks:  dx<0:+3.669[FAIL], dy>0:-0.363[FAIL], dz<0:-1.752[ok]
+    all_dims: dx=+3.669 dy=-0.363 dz=-1.752 droll=+0.212 dpitch=-0.007 dyaw=-0.076 grip=+6.246
+
+  up_tilt_right                       [WRONG]
+    prompt:  move up 3.0 cm, tilt right 10 degrees, open gripper
+    checks:  dz>0:-1.748[FAIL], droll<0:+0.216[FAIL]
+    all_dims: dx=+3.156 dy=-0.761 dz=-1.748 droll=+0.216 dpitch=-0.295 dyaw=-0.154 grip=+6.906
+
+  fwd_tilt_left                       [OK]
+    prompt:  move forward 3.0 cm, tilt left 10 degrees, open gripper
+    checks:  dx>0:+4.952[ok], droll>0:+0.228[ok]
+    all_dims: dx=+4.952 dy=-1.962 dz=-1.258 droll=+0.228 dpitch=-0.178 dyaw=-0.305 grip=+6.641
+
+  down_tilt_back                      [OK]
+    prompt:  move down 3.0 cm, tilt back 10 degrees, close gripper
+    checks:  dz<0:-1.186[ok], dpitch>0:+0.110[ok]
+    all_dims: dx=+4.167 dy=-1.251 dz=-1.186 droll=+0.197 dpitch=+0.110 dyaw=-0.161 grip=+6.086
+
+  fwd_rotate_cw                       [OK]
+    prompt:  move forward 3.0 cm, rotate clockwise 10 degrees, close gripper
+    checks:  dx>0:+4.215[ok], dyaw<0:-0.322[ok]
+    all_dims: dx=+4.215 dy=-1.379 dz=-0.166 droll=+0.144 dpitch=+0.157 dyaw=-0.322 grip=+5.426
+
+  left_tilt_right_cw                  [WRONG]
+    prompt:  move left 3.0 cm, tilt right 10 degrees, rotate clockwise 10 degrees, open gripper
+    checks:  dy>0:-0.665[FAIL], droll<0:+0.130[FAIL], dyaw<0:-0.101[ok]
+    all_dims: dx=+4.209 dy=-0.665 dz=-1.004 droll=+0.130 dpitch=+0.250 dyaw=-0.101 grip=+5.488
+
+  tilt_left_tilt_back                 [WRONG]
+    prompt:  tilt left 10 degrees, tilt back 10 degrees, open gripper
+    checks:  droll>0:+0.185[ok], dpitch>0:-0.049[FAIL]
+    all_dims: dx=+3.145 dy=+0.291 dz=-0.557 droll=+0.185 dpitch=-0.049 dyaw=-0.125 grip=+5.863
+
+  tilt_right_tilt_fwd                 [WRONG]
+    prompt:  tilt right 10 degrees, tilt forward 10 degrees, close gripper
+    checks:  droll<0:+0.120[FAIL], dpitch<0:+0.054[FAIL]
+    all_dims: dx=+3.042 dy=+0.657 dz=-0.315 droll=+0.120 dpitch=+0.054 dyaw=-0.214 grip=+5.141
+
+  tilt_right_rotate_ccw               [WRONG]
+    prompt:  tilt right 10 degrees, rotate counterclockwise 10 degrees, open gripper
+    checks:  droll<0:+0.151[FAIL], dyaw>0:-0.205[FAIL]
+    all_dims: dx=+3.130 dy=+0.255 dz=-0.320 droll=+0.151 dpitch=-0.134 dyaw=-0.205 grip=+6.090
+
+  data_6axis_a                        [WRONG]
+    prompt:  move forward 2.5 cm, move right 1.0 cm, move up 3.0 cm, tilt left 10 degrees, tilt back 10 degrees, rotate clockwise 10 degrees, close gripper
+    checks:  dx>0:+3.093[ok], dy<0:-0.539[ok], dz>0:-0.717[FAIL], droll>0:+0.164[ok], dpitch>0:+0.104[ok], dyaw<0:-0.260[ok]
+    all_dims: dx=+3.093 dy=-0.539 dz=-0.717 droll=+0.164 dpitch=+0.104 dyaw=-0.260 grip=+5.074
+
+  data_6axis_b                        [WRONG]
+    prompt:  move forward 1.5 cm, move left 2.0 cm, move down 3.0 cm, tilt right 10 degrees, tilt forward 10 degrees, rotate counterclockwise 10 degrees, open gripper
+    checks:  dx>0:+5.227[ok], dy>0:-1.630[FAIL], dz<0:-0.679[ok], droll<0:+0.166[FAIL], dpitch<0:+0.219[FAIL], dyaw>0:-0.185[FAIL]
+    all_dims: dx=+5.227 dy=-1.630 dz=-0.679 droll=+0.166 dpitch=+0.219 dyaw=-0.185 grip=+5.387
+
+========================================================================================================================
+  Prompt-level accuracy:    11/29 (38%) prompts with ALL conditions correct
+  Condition-level accuracy: 28/55 (51%) individual conditions correct
+
+  Per-dimension accuracy:
+          dx: 7/10 (70%)
+          dy: 3/9 (33%)
+          dz: 5/10 (50%)
+       droll: 4/10 (40%)
+      dpitch: 4/7 (57%)
+        dyaw: 4/7 (57%)
+        grip: 1/2 (50%)
+
+Loading sim state from: ./mid_traj_states/libero_10_combined_nonum/task_0_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket/sim_state_chunk_6.npy
+
+========================================================================================================================
+  State: AFTER CHUNK 6 (48 steps)
+========================================================================================================================
+
+  move_forward_5cm                    [OK]
+    prompt:  move forward 5.0 cm, open gripper
+    checks:  dx>0:+4.810[ok]
+    all_dims: dx=+4.810 dy=-1.868 dz=-0.996 droll=+0.271 dpitch=-0.185 dyaw=-0.476 grip=+6.266
+
+  move_back_5cm                       [WRONG]
+    prompt:  move back 5.0 cm, open gripper
+    checks:  dx<0:+2.125[FAIL]
+    all_dims: dx=+2.125 dy=-0.407 dz=-1.717 droll=+0.237 dpitch=-0.074 dyaw=-0.090 grip=+6.672
+
+  move_left_5cm                       [WRONG]
+    prompt:  move left 5.0 cm, open gripper
+    checks:  dy>0:-0.833[FAIL]
+    all_dims: dx=+4.112 dy=-0.833 dz=-1.546 droll=+0.205 dpitch=+0.035 dyaw=-0.118 grip=+5.836
+
+  move_right_5cm                      [OK]
+    prompt:  move right 5.0 cm, open gripper
+    checks:  dy<0:-1.980[ok]
+    all_dims: dx=+2.957 dy=-1.980 dz=-1.803 droll=+0.387 dpitch=-0.261 dyaw=-0.290 grip=+7.457
+
+  move_up_5cm                         [WRONG]
+    prompt:  move up 5.0 cm, open gripper
+    checks:  dz>0:-1.692[FAIL]
+    all_dims: dx=+2.394 dy=-0.346 dz=-1.692 droll=+0.232 dpitch=-0.317 dyaw=-0.245 grip=+6.801
+
+  move_down_5cm                       [OK]
+    prompt:  move down 5.0 cm, open gripper
+    checks:  dz<0:-0.998[ok]
+    all_dims: dx=+4.212 dy=-2.036 dz=-0.998 droll=+0.296 dpitch=+0.049 dyaw=-0.274 grip=+5.855
+
+  tilt_left_20deg                     [OK]
+    prompt:  tilt left 20 degrees, open gripper
+    checks:  droll>0:+0.227[ok]
+    all_dims: dx=+2.422 dy=+0.101 dz=-1.008 droll=+0.227 dpitch=-0.034 dyaw=-0.249 grip=+6.016
+
+  tilt_right_20deg                    [WRONG]
+    prompt:  tilt right 20 degrees, open gripper
+    checks:  droll<0:+0.236[FAIL]
+    all_dims: dx=+2.350 dy=+0.036 dz=-1.156 droll=+0.236 dpitch=-0.062 dyaw=-0.281 grip=+5.934
+
+  tilt_back_20deg                     [OK]
+    prompt:  tilt back 20 degrees, open gripper
+    checks:  dpitch>0:+0.015[ok]
+    all_dims: dx=+2.270 dy=+0.022 dz=-0.997 droll=+0.199 dpitch=+0.015 dyaw=-0.261 grip=+5.727
+
+  tilt_fwd_20deg                      [OK]
+    prompt:  tilt forward 20 degrees, open gripper
+    checks:  dpitch<0:-0.140[ok]
+    all_dims: dx=+2.652 dy=-0.098 dz=-0.621 droll=+0.237 dpitch=-0.140 dyaw=-0.330 grip=+6.074
+
+  rotate_ccw_20deg                    [WRONG]
+    prompt:  rotate counterclockwise 20 degrees, open gripper
+    checks:  dyaw>0:-0.234[FAIL]
+    all_dims: dx=+2.590 dy=+0.413 dz=-0.524 droll=+0.213 dpitch=-0.145 dyaw=-0.234 grip=+6.266
+
+  rotate_cw_20deg                     [OK]
+    prompt:  rotate clockwise 20 degrees, open gripper
+    checks:  dyaw<0:-0.253[ok]
+    all_dims: dx=+2.592 dy=+0.135 dz=-0.817 droll=+0.198 dpitch=-0.091 dyaw=-0.253 grip=+6.043
+
+  close_gripper                       [WRONG]
+    prompt:  close gripper
+    checks:  grip<0.5:+3.996[FAIL]
+    all_dims: dx=+1.781 dy=+0.927 dz=-0.715 droll=+0.123 dpitch=+0.211 dyaw=-0.166 grip=+3.996
+
+  open_gripper                        [OK]
+    prompt:  open gripper
+    checks:  grip>=0.5:+5.898[ok]
+    all_dims: dx=+2.510 dy=+0.135 dz=-0.738 droll=+0.227 dpitch=-0.097 dyaw=-0.246 grip=+5.898
+
+  fwd_up_close                        [WRONG]
+    prompt:  move forward 3.0 cm, move up 2.0 cm, close gripper
+    checks:  dx>0:+2.432[ok], dz>0:-0.647[FAIL]
+    all_dims: dx=+2.432 dy=+0.160 dz=-0.647 droll=+0.166 dpitch=+0.184 dyaw=-0.340 grip=+4.270
+
+  left_down_open                      [WRONG]
+    prompt:  move left 4.0 cm, move down 2.0 cm, open gripper
+    checks:  dy>0:-1.057[FAIL], dz<0:-1.296[ok]
+    all_dims: dx=+4.100 dy=-1.057 dz=-1.296 droll=+0.212 dpitch=+0.058 dyaw=-0.150 grip=+5.824
+
+  back_right                          [WRONG]
+    prompt:  move back 4.0 cm, move right 3.0 cm, close gripper
+    checks:  dx<0:+1.254[FAIL], dy<0:+0.001[FAIL]
+    all_dims: dx=+1.254 dy=+0.001 dz=-1.486 droll=+0.214 dpitch=+0.132 dyaw=-0.087 grip=+4.438
+
+  fwd_left_up                         [WRONG]
+    prompt:  move forward 3.0 cm, move left 2.0 cm, move up 2.0 cm, open gripper
+    checks:  dx>0:+4.018[ok], dy>0:-1.166[FAIL], dz>0:-1.233[FAIL]
+    all_dims: dx=+4.018 dy=-1.166 dz=-1.233 droll=+0.243 dpitch=-0.150 dyaw=-0.316 grip=+6.160
+
+  back_left_down                      [WRONG]
+    prompt:  move back 3.0 cm, move left 2.0 cm, move down 2.0 cm, open gripper
+    checks:  dx<0:+3.019[FAIL], dy>0:-0.522[FAIL], dz<0:-1.600[ok]
+    all_dims: dx=+3.019 dy=-0.522 dz=-1.600 droll=+0.236 dpitch=+0.029 dyaw=-0.127 grip=+6.391
+
+  up_tilt_right                       [WRONG]
+    prompt:  move up 3.0 cm, tilt right 10 degrees, open gripper
+    checks:  dz>0:-1.740[FAIL], droll<0:+0.228[FAIL]
+    all_dims: dx=+2.857 dy=-0.957 dz=-1.740 droll=+0.228 dpitch=-0.278 dyaw=-0.247 grip=+6.711
+
+  fwd_tilt_left                       [OK]
+    prompt:  move forward 3.0 cm, tilt left 10 degrees, open gripper
+    checks:  dx>0:+4.349[ok], droll>0:+0.312[ok]
+    all_dims: dx=+4.349 dy=-2.254 dz=-1.404 droll=+0.312 dpitch=-0.157 dyaw=-0.340 grip=+6.422
+
+  down_tilt_back                      [OK]
+    prompt:  move down 3.0 cm, tilt back 10 degrees, close gripper
+    checks:  dz<0:-0.891[ok], dpitch>0:+0.246[ok]
+    all_dims: dx=+3.049 dy=-1.279 dz=-0.891 droll=+0.269 dpitch=+0.246 dyaw=-0.143 grip=+4.699
+
+  fwd_rotate_cw                       [OK]
+    prompt:  move forward 3.0 cm, rotate clockwise 10 degrees, close gripper
+    checks:  dx>0:+3.030[ok], dyaw<0:-0.344[ok]
+    all_dims: dx=+3.030 dy=-0.342 dz=-0.169 droll=+0.170 dpitch=+0.221 dyaw=-0.344 grip=+4.477
+
+  left_tilt_right_cw                  [WRONG]
+    prompt:  move left 3.0 cm, tilt right 10 degrees, rotate clockwise 10 degrees, open gripper
+    checks:  dy>0:-0.908[FAIL], droll<0:+0.178[FAIL], dyaw<0:-0.171[ok]
+    all_dims: dx=+3.496 dy=-0.908 dz=-1.296 droll=+0.178 dpitch=-0.010 dyaw=-0.171 grip=+6.527
+
+  tilt_left_tilt_back                 [WRONG]
+    prompt:  tilt left 10 degrees, tilt back 10 degrees, open gripper
+    checks:  droll>0:+0.259[ok], dpitch>0:-0.074[FAIL]
+    all_dims: dx=+2.680 dy=-0.020 dz=-0.916 droll=+0.259 dpitch=-0.074 dyaw=-0.349 grip=+5.852
+
+  tilt_right_tilt_fwd                 [WRONG]
+    prompt:  tilt right 10 degrees, tilt forward 10 degrees, close gripper
+    checks:  droll<0:+0.179[FAIL], dpitch<0:+0.091[FAIL]
+    all_dims: dx=+2.248 dy=+0.745 dz=-0.584 droll=+0.179 dpitch=+0.091 dyaw=-0.196 grip=+5.078
+
+  tilt_right_rotate_ccw               [WRONG]
+    prompt:  tilt right 10 degrees, rotate counterclockwise 10 degrees, open gripper
+    checks:  droll<0:+0.229[FAIL], dyaw>0:-0.299[FAIL]
+    all_dims: dx=+2.637 dy=+0.218 dz=-0.897 droll=+0.229 dpitch=-0.134 dyaw=-0.299 grip=+6.324
+
+  data_6axis_a                        [WRONG]
+    prompt:  move forward 2.5 cm, move right 1.0 cm, move up 3.0 cm, tilt left 10 degrees, tilt back 10 degrees, rotate clockwise 10 degrees, close gripper
+    checks:  dx>0:+2.250[ok], dy<0:+0.059[FAIL], dz>0:-0.696[FAIL], droll>0:+0.193[ok], dpitch>0:+0.124[ok], dyaw<0:-0.379[ok]
+    all_dims: dx=+2.250 dy=+0.059 dz=-0.696 droll=+0.193 dpitch=+0.124 dyaw=-0.379 grip=+4.412
+
+  data_6axis_b                        [WRONG]
+    prompt:  move forward 1.5 cm, move left 2.0 cm, move down 3.0 cm, tilt right 10 degrees, tilt forward 10 degrees, rotate counterclockwise 10 degrees, open gripper
+    checks:  dx>0:+3.966[ok], dy>0:-1.328[FAIL], dz<0:-1.047[ok], droll<0:+0.231[FAIL], dpitch<0:+0.142[FAIL], dyaw>0:-0.181[FAIL]
+    all_dims: dx=+3.966 dy=-1.328 dz=-1.047 droll=+0.231 dpitch=+0.142 dyaw=-0.181 grip=+5.434
+
+========================================================================================================================
+  Prompt-level accuracy:    11/29 (38%) prompts with ALL conditions correct
+  Condition-level accuracy: 26/55 (47%) individual conditions correct
+
+  Per-dimension accuracy:
+          dx: 7/10 (70%)
+          dy: 1/9 (11%)
+          dz: 5/10 (50%)
+       droll: 4/10 (40%)
+      dpitch: 4/7 (57%)
+        dyaw: 4/7 (57%)
+        grip: 1/2 (50%)
+
+============================================================
+OVERALL SUMMARY
+============================================================
+  initial             : 10/29 (34%)
+  chunk_3             : 11/29 (38%)
+  chunk_6             : 11/29 (38%)

@@ -1,0 +1,1 @@
+precomputed from: ./mid_traj_states/libero_goal_nonum150k/task_2_put_the_wine_bottle_on_top_of_the_cabinet/sim_state_chunk_6.npy
